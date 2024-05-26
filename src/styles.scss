@@ -1,0 +1,18 @@
+@import "fonts/Roboto";
+@import "scss/checkbox";
+@import "scss/input";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  color: WHITE;
+}
+
+html, body {
+  background: #111;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

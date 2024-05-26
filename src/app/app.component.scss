@@ -1,0 +1,39 @@
+* {
+  width: 100%;
+}
+
+.wrapper {
+  position: fixed;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #252525;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 1000px) {
+    width: 1024px;
+    height: 600px;
+    border-radius: 1rem;
+  }
+
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.ship-wheel-background {
+  position: fixed;
+  bottom: -25vw;
+  right: -25vw;
+  width: 65vw;
+  opacity: 0.1;
+}

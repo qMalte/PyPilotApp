@@ -1,0 +1,27 @@
+<div *ngIf="service.visible" class="numFieldWrapper">
+  <div class="numFieldContainer">
+    <div class="value" [innerHTML]="service.value"></div>
+    <div class="numFieldRow">
+      <div (click)="addDigit('1')">1</div>
+      <div (click)="addDigit('2')">2</div>
+      <div (click)="addDigit('3')">3</div>
+    </div>
+    <div class="numFieldRow">
+      <div (click)="addDigit('4')">4</div>
+      <div (click)="addDigit('5')">5</div>
+      <div (click)="addDigit('6')">6</div>
+    </div>
+    <div class="numFieldRow">
+      <div (click)="addDigit('7')">7</div>
+      <div (click)="addDigit('8')">8</div>
+      <div (click)="addDigit('9')">9</div>
+    </div>
+    <div class="numFieldRow">
+      <div (click)="addDigit('0')">0</div>
+    </div>
+    <div class="numFieldRowActions">
+      <button class="cancel" type="button" (click)="service.cancel()">Verwerfen</button>
+      <button type="button" (click)="service.confirm()">Übernehmen</button>
+    </div>
+  </div>
+</div>

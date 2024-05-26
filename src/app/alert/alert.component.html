@@ -1,0 +1,13 @@
+<div *ngIf="alertService.visibility" class="alert-wrapper">
+  <div class="alert-container">
+    <img src="assets/warning.svg">
+    <div class="content">
+      <div class="title">
+        {{ alertService.title }}
+      </div>
+      <div class="message">
+        {{ alertService.message }}
+      </div>
+    </div>
+  </div>
+</div>

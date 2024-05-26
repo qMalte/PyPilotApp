@@ -1,0 +1,47 @@
+.input-wrapper {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  &.range {
+    gap: 0.5rem;
+    width: 100%;
+  }
+}
+
+.input-text {
+  background: #555;
+  transition: 0.4s;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  padding: 0 0.5rem;
+  &.sm {
+    width: 4rem;
+  }
+  &:focus {
+    outline: none;
+    border-color: #2070d0;
+  }
+  &:hover {
+    border-color: #2070d0;
+  }
+}
+
+.input-select {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.input-select > div {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  width: auto;
+  background: #555;
+  border-radius: 0.5rem;
+  &.selected {
+    background: #2070d0;
+  }
+}

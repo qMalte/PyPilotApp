@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="title">
+    <div class="title-text">
+      Einstellungen
+    </div>
+    <div routerLink="/status" class="home">
+      <img src="assets/home.svg">
+    </div>
+  </div>
+  <div class="list">
+
+    <div class="item">
+      <div class="descriptions">
+        <div class="prop-desc">
+          Keys zu den Einstellungen
+        </div>
+        <div class="prop-key">
+          Einblenden der Keys von einzelenen PyPilot-Parametern
+        </div>
+      </div>
+      <div class="values">
+        <div class="checkbox-wrapper-14" style="display: flex; align-items: center; width: auto">
+          <input [(ngModel)]="showKeys" (ngModelChange)="saveLocalProperties()" type="checkbox" class="switch">
+        </div>
+      </div>
+    </div>
+
+    <div class="item" *ngFor="let item of parameterList">
+      <div class="descriptions">
+        <div class="prop-desc">
+          {{ item.param.desc }}
+        </div>
+        <div *ngIf="showKeys" class="prop-key">
+          {{ item.title }}
+        </div>
+      </div>
+      <div class="values">
+        <div *ngIf="item.param.type === 'BooleanProperty'" class="checkbox-wrapper-14" style="display: flex; align-items: center; width: auto">
+          <input id="s1-14" type="checkbox" class="switch"
+                 [ngModel]="getValueByKey(item.title)"
+                 (ngModelChange)="handleSave(item.title, $event)">
+        </div>
+        <div *ngIf="item.param.type === 'Value' || item.param.type === 'ResettableValue'" class="input-wrapper">
+          <input type="text" class="input-text sm" (focusin)="editNumericValue(item.title)" [ngModel]="getValueByKey(item.title)">
+        </div>
+        <div *ngIf="item.param.type.includes('Range')" class="input-wrapper range">
+          <input type="range" class="input-range" [min]="item.param.min" [max]="item.param.max"
+                 [ngModel]="getValueByKey(item.title)"
+                 (ngModelChange)="handleSave(item.title, $event)">
+          <div style="width: auto; height: auto; font-size: 1.2rem; font-weight: bold" [innerText]="getValueByKey(item.title)"></div>
+        </div>
+        <div *ngIf="item.param.type === 'EnumProperty'" class="input-wrapper">
+          <div class="input-select">
+            <div *ngFor="let choice of item.param.choices" [ngClass]="getValueByKey(item.title) == choice ? 'active' : ''">
+              {{ choice }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-numfield />

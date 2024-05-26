@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="title">
+    <div routerLink="/status" class="home">
+      <img src="assets/home.svg">
+    </div>
+    <div class="title-text">
+      Wende durchführen
+    </div>
+  </div>
+  <div class="actions">
+    <button (click)="turn(true)" type="button" class="setter">
+      <img src="assets/back.svg">
+      <div>
+        Backbord
+      </div>
+    </button>
+    <button (click)="turn(false)" type="button" class="setter">
+      <img src="assets/back_right.svg">
+      <div>
+        Steuerbord
+      </div>
+    </button>
+  </div>
+</div>
