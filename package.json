@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ngcc",
-    "generate-icon": "npx @capacitor/assets generate --ios --assetPath src/assets"
+    "generate-icon": "npx @capacitor/assets generate --ios --assetPath src/assets",
+    "ios": "npx cap sync"
   },
   "private": true,
   "dependencies": {

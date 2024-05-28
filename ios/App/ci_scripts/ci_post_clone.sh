@@ -16,4 +16,4 @@ npm ci
 # or `pnpm install --frozen-lockfile` or `yarn install --frozen-lockfile` or bun install
 npm run build
 # or npm run build
-npm run sync:ios
+npm run ios
