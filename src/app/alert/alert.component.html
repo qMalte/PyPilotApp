@@ -1,12 +1,31 @@
 <div *ngIf="alertService.visibility" class="alert-wrapper">
   <div class="alert-container">
-    <img src="assets/warning.svg">
+    <img class="sm-hidden" src="assets/warning.svg">
     <div class="content">
       <div class="title">
         {{ alertService.title }}
       </div>
       <div class="message">
         {{ alertService.message }}
+      </div>
+      <div class="form">
+        <span class="span-in">
+          <label>PyPilot URL</label>
+          <input [(ngModel)]="pyPyPilotUrl" type="text">
+        </span>
+        <div>
+          <span class="span-in">
+            <label>SignalK Host</label>
+            <input [(ngModel)]="signalKUrl" type="text">
+          </span>
+          <span class="span-in">
+            <label>SignalK Port</label>
+            <input [(ngModel)]="signalKPort" class="sm" type="text">
+          </span>
+        </div>
+        <div>
+          <button (click)="saveAndRestart()" type="button">Speichern</button>
+        </div>
       </div>
     </div>
   </div>

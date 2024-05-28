@@ -1,11 +1,10 @@
 import {Component, ElementRef, Input, IterableDiffers, OnInit, ViewChild} from '@angular/core';
 import {CommonModule, NgStyle} from '@angular/common';
-import {GaugesModule} from "ng-canvas-gauges";
-import {SignalKService} from "../../services/SignalK.Service";
-import {SignalkData} from "../../models/SignalkData";
 import {SignalKClientModule} from "signalk-client-angular";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {WebsocketService} from "../../services/websocket.service";
+import {SignalKService} from "../../services/SignalK.Service";
+import {SignalkData} from "../../models/SignalkData";
 
 @Component({
   selector: 'app-ruder-sense',
@@ -19,6 +18,8 @@ import {WebsocketService} from "../../services/websocket.service";
 })
 export class RuderSenseComponent implements OnInit {
 
+  @Input() inputRudderAngle: number = 0;
+
   ruderAngle: number = -1;
 
   indicatorWidth: number = 50;
@@ -27,16 +28,29 @@ export class RuderSenseComponent implements OnInit {
   marginLeft: number = 0;
   marginRight: number = 0;
 
-  constructor(private wsService: WebsocketService) {
-    //
+  private iterableDiffer: any;
+
+  constructor(private signalK: SignalKService, differs: IterableDiffers) {
+    this.iterableDiffer = differs.find([]).create();
+  }
+
+  ngDoCheck(): void {
+    const changes = this.iterableDiffer.diff(this.signalK.dataList);
+    if (changes) {
+      this.signalK.dataList.forEach((element: SignalkData) => {
+        switch (element.getDesc()) {
+          case 'steering.rudderAngle':
+            const data = element.getValue();
+            this.ruderAngle = this.umrechnenWert(this.radiansToDegrees(data));
+            this.updateRudderGauge();
+            break;
+        }
+      });
+    }
   }
 
   ngOnInit() {
-    this.wsService.socket.on('steering.rudderAngle', (data: number) => {
-      console.log('Ruderwinkel: ' + data);
-      this.ruderAngle = this.umrechnenWert(this.radiansToDegrees(data));
-      this.updateRudderGauge();
-    });
+    //
   }
 
   updateRudderGauge() {

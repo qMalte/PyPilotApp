@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {WebsocketService} from "../../services/websocket.service";
-import {PyPilotParameter} from "../../../../src/classes/PyPilotParameter";
-import {PyPilotService} from "../../services/pypilot.service";
 import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
-import {CourseHelper} from "../../../../src/helpers/CourseHelper";
 import {RouterLink} from "@angular/router";
+import {PyPilotParameter} from "../../classes/PyPilotParameter";
 
 @Component({
   selector: 'app-turn',
@@ -13,15 +11,16 @@ import {RouterLink} from "@angular/router";
   imports: [CommonModule, HttpClientModule, RouterLink],
   templateUrl: './turn.component.html',
   styleUrl: './turn.component.scss',
-  providers: [WebsocketService, PyPilotService, HttpClient]
+  providers: [WebsocketService, HttpClient]
 })
 export class TurnComponent implements OnInit {
 
   state = false;
   course = 0;
   headingCommand = 0;
+  private CourseHelper: any;
 
-  constructor(private socketService: WebsocketService, private pyPilotService: PyPilotService) {
+  constructor(private socketService: WebsocketService) {
     //
   }
 
@@ -42,7 +41,6 @@ export class TurnComponent implements OnInit {
     if (!this.state) {
       return;
     }
-    await this.pyPilotService.postData(PyPilotParameter.apHeadingCommand, CourseHelper.adjustCourse(this.course, byBackboard ? -180 : 180));
   }
 
 }

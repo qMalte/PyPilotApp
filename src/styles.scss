@@ -16,3 +16,13 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
+
+.hidden {
+  display: none !important;
+}
+
+.sm-hidden {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}

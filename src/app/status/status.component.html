@@ -1,6 +1,6 @@
 <div class="container">
   <div class="nav">
-    <div routerLink="/turn" routerLinkActive="active" class="nav-item" style="width: auto">
+    <div routerLink="/status" routerLinkActive="active" class="nav-item" style="width: auto">
       <img src="assets/back.svg">
     </div>
     <div class="state" [ngClass]="state ? 'active' : 'inactive'">
@@ -9,66 +9,85 @@
       </div>
       <div class="state-circle" [ngClass]="state ? 'active' : 'inactive'"></div>
     </div>
-    <div routerLink="/settings" routerLinkActive="active" class="nav-item" style="width: auto">
+    <div routerLink="/status" routerLinkActive="active" class="nav-item" style="width: auto">
       <img src="assets/mechanical-gears-.svg">
     </div>
   </div>
-  <div class="modes">
-    <div (click)="setMode(ApMode.Compass)" class="mode left"
-         [ngClass]="mode == ApMode.Compass.toString() ? 'active' : ''">
-      <img src="assets/compass.png">
-      <label>Kompass</label>
-    </div>
-    <div (click)="setMode(ApMode.GPS)" class="mode"
-         [ngClass]="mode == ApMode.GPS.toString() ? 'active' : ''">
-      <img src="assets/gps.png">
-      <label>GPS</label>
-    </div>
-    <div (click)="setMode(ApMode.Wind)" class="mode right"
-         [ngClass]="mode == ApMode.Wind.toString() ? 'active' : ''">
-      <img src="assets/wind.png">
-      <label>Wind</label>
+  <div class="mode-wrapper">
+    <div class="modes">
+      <div (click)="setValue(pyPilotParameterClass.apMode, apModeClass.Compass)" class="mode left"
+           *ngIf="isWindDataExists || isPositionDataExists"
+           [ngClass]="apMode == apModeClass.Compass.toString() ? 'active' : ''">
+        <img src="assets/compass.png">
+        <label>Kompass</label>
+      </div>
+      <div (click)="setValue(pyPilotParameterClass.apMode, apModeClass.GPS)" class="mode"
+           *ngIf="isPositionDataExists"
+           [ngClass]="apMode == apModeClass.GPS.toString() ? 'active' : ''">
+        <img src="assets/gps.png">
+        <label>GPS</label>
+      </div>
+      <div (click)="setValue(pyPilotParameterClass.apMode, apModeClass.Wind)" class="mode right"
+           *ngIf="isWindDataExists"
+           [ngClass]="apMode == apModeClass.Wind.toString() ? 'active' : ''">
+        <img src="assets/wind.png">
+        <label>Wind</label>
+      </div>
     </div>
   </div>
   <div class="values">
     <div *ngIf="state" class="course" id="course">
-      {{ headingCommand }}<span style="font-size: 6rem;">°</span>
+      {{ course }}<span>°</span>
     </div>
     <div *ngIf="!state" class="course" id="course2">
-      {{ course }}<span style="font-size: 6rem;">°</span>
+      {{ course }}<span>°</span>
     </div>
     <div *ngIf="state" class="headingCommand">
-      <span>Aktueller Steuerkurs: </span><b>{{ course }}</b>°
+      <span>Soll-Kurs: </span><b>{{ headingCommand }}</b>°
     </div>
   </div>
   <app-ruder-sense />
   <div class="actions">
 
-    <button class="button setter" (click)="setHeading(headingCommand - 10)" type="button">
+    <button class="button setter" (click)="setCourse(-10)" type="button">
       -10
     </button>
-    <button class="button setter" (click)="setHeading(headingCommand - 1)" type="button">
+    <button class="button setter" (click)="setCourse(-1)" type="button">
       -1
     </button>
 
-    <button class="button success" type="button" *ngIf="!state" (click)="toggleAp(true)">
+    <button class="button success toggle only-lg" type="button" *ngIf="!state" (click)="toggleAp(true)">
       <img src="assets/steering.svg">
       <div>
         einschalten
       </div>
     </button>
-    <button class="button danger" type="button" *ngIf="state" (click)="toggleAp(false)">
+    <button class="button danger toggle only-lg" type="button" *ngIf="state" (click)="toggleAp(false)">
       <img src="assets/power.svg">
       <div>
         ausschalten
       </div>
     </button>
 
-    <button class="button setter" (click)="setHeading(headingCommand + 1)" type="button">
+    <button class="button setter" (click)="setCourse(1)" type="button">
       +1
     </button>
-    <button class="button setter" (click)="setHeading(headingCommand + 10)" type="button">
+    <button class="button setter" (click)="setCourse(10)" type="button">
       +10
     </button>
+
+    <button class="button success toggle only-sm" type="button" *ngIf="!state" (click)="toggleAp(true)">
+      <img src="assets/steering.svg">
+      <div>
+        einschalten
+      </div>
+    </button>
+    <button class="button danger toggle only-sm" type="button" *ngIf="state" (click)="toggleAp(false)">
+      <img src="assets/power.svg">
+      <div>
+        ausschalten
+      </div>
+    </button>
+
   </div>
 </div>

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {SignalKClient} from 'signalk-client-angular';
 import {SignalkData} from "../models/SignalkData";
+import {environment} from "../environments/environment";
 
 @Injectable()
 export class SignalKService {
@@ -11,10 +12,7 @@ export class SignalKService {
 
   constructor(public sk: SignalKClient) {
 
-    const host = '192.168.9.202';
-    const port = 3000;
-
-    this.sk.connectStream(host, port, false, 'self');
+    this.sk.connectStream(environment.signalKHost, environment.signalKPort, false, 'self');
 
     this.sk.stream.onConnect.subscribe(e => {
       console.log('Verbindung zum SignalK Server erfolgreich hergestellt!');
@@ -23,11 +21,11 @@ export class SignalKService {
 
     this.sk.stream.onError.subscribe(err => {
       SignalKService.state = false;
-      this.sk.connectStream(host, port, false, 'self');
+      this.sk.connectStream(environment.signalKHost, environment.signalKPort, false, 'self');
     });
     this.sk.stream.onClose.subscribe(err => {
       SignalKService.state = false;
-      this.sk.connectStream(host, port, false, 'self');
+      this.sk.connectStream(environment.signalKHost, environment.signalKPort, false, 'self');
     });
 
     this.sk.stream.onMessage.subscribe(e => {

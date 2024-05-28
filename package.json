@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "ngcc"
+    "postinstall": "ngcc",
+    "generate-icon": "npx @capacitor/assets generate --ios --assetPath src/assets"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +20,9 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/ios": "^6.0.0",
+    "generate-icon": "^0.1.13",
     "ng-canvas-gauges": "^6.0.4",
     "rxjs": "~7.8.0",
     "signalk-client-angular": "^2.0.2",
@@ -30,6 +34,7 @@
     "@angular-devkit/build-angular": "^17.0.0",
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.0",
+    "@capacitor/cli": "^6.0.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
