@@ -49,10 +49,17 @@
   <app-ruder-sense />
   <div class="actions">
 
-    <button class="button setter" (click)="setCourse(-10)" type="button">
+    <button class="button setter only-lg" (click)="setCourse(-10)" type="button">
       -10
     </button>
-    <button class="button setter" (click)="setCourse(-1)" type="button">
+    <button class="button setter only-sm" *ngIf="state" (click)="setCourse(1)" type="button">
+      +1
+    </button>
+
+    <button class="button setter only-sm" *ngIf="state" (click)="setCourse(-1)" type="button">
+      -1
+    </button>
+    <button class="button setter only-lg" (click)="setCourse(-1)" type="button">
       -1
     </button>
 
@@ -69,11 +76,17 @@
       </div>
     </button>
 
-    <button class="button setter" (click)="setCourse(1)" type="button">
+    <button class="button setter only-lg" (click)="setCourse(1)" type="button">
       +1
     </button>
-    <button class="button setter" (click)="setCourse(10)" type="button">
+    <button class="button setter only-sm" *ngIf="state" (click)="setCourse(10)" type="button">
       +10
+    </button>
+    <button class="button setter only-lg" (click)="setCourse(10)" type="button">
+      +10
+    </button>
+    <button class="button setter only-sm" *ngIf="state" (click)="setCourse(-10)" type="button">
+      -10
     </button>
 
     <button class="button success toggle only-sm" type="button" *ngIf="!state" (click)="toggleAp(true)">

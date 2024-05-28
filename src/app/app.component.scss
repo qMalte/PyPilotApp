@@ -8,6 +8,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-height: 500px) {
+    padding: 1rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    align-items: flex-end;
+    padding-bottom: 1.75rem;
+  }
+
 }
 
 .container {
@@ -16,6 +26,10 @@
   display: flex;
   flex-direction: column;
 
+  @media screen and (max-height: 500px) {
+    border-radius: 0.5rem;
+  }
+
   @media screen and (min-width: 1000px) {
     width: 1024px;
     height: 600px;
@@ -23,7 +37,7 @@
   }
 
   @media screen and (max-width: 500px) {
-    height: 96%;
+    height: 94%;
     width: 92%;
     border-radius: 1rem;
   }
