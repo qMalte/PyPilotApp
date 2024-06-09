@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {AlertService} from "./alert.service";
 import {environment} from "../../environments/environment";
 import {FormsModule} from "@angular/forms";
+import {ResourceHelper} from "../../helpers/ResourceHelper";
 
 @Component({
   selector: 'app-alert',
@@ -16,6 +17,10 @@ export class AlertComponent {
   pyPyPilotUrl = environment.pyPilotUrl;
   signalKUrl = environment.signalKHost;
   signalKPort = environment.signalKPort;
+
+  get Resource() {
+    return ResourceHelper.DefaultResource;
+  }
 
   constructor(public alertService: AlertService) {
     //

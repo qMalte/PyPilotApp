@@ -9,6 +9,7 @@ import {NumfieldService} from "../numfield/numfield.service";
 import {AlertService} from "../alert/alert.service";
 import {PyPilotData} from "../../classes/PyPilotData";
 import {PyPilotParameterDetails} from "../../classes/PyPilotParameterDetails";
+import {PyPilotKeyHelper} from "../../helpers/PyPilotKeyHelper";
 
 @Component({
   selector: 'app-settings',
@@ -31,6 +32,10 @@ export class SettingsComponent implements OnInit {
   }
 
   async ngOnInit() {
+
+    this.dataList = this.socketService.getDataList();
+    this.parameterList = [];
+
     for (const param in PyPilotParameterDetails) {
       this.parameterList.push({
         title: param,
@@ -39,11 +44,12 @@ export class SettingsComponent implements OnInit {
       });
     }
 
-    this.parameterList = this.parameterList.filter(x => x.param.type != 'SensorValue');
+    this.parameterList = this.parameterList
+      .filter(x => x.param.type != 'SensorValue')
+      .filter(x => x.param.isDisplayed);
 
     this.showKeys = localStorage.getItem('showKeys') == '1';
 
-    // this.dataList = await this.pyPilotService.getData();
     console.log(this.dataList);
   }
 
@@ -52,23 +58,26 @@ export class SettingsComponent implements OnInit {
   }
 
   async editNumericValue(key: string) {
-    const numFieldQuery = await this.numFieldService.open();
+    const numFieldQuery = await this.numFieldService.open(this.getValueByKey(key), key);
     if (numFieldQuery != null) {
       await this.handleSave(key, numFieldQuery);
     }
   }
 
   async handleSave(key: string, value: any) {
-    /* if (!await this.pyPilotService.postData(key, value)) {
-      this.alertService.show(
-        'Speicherfehler',
-        'Es ist ein Fehler beim speichern eines Parameter aufgetreten.',
-        8000);
-    } */
+    this.socketService.pyPilotSet(key, value);
   }
 
   getValueByKey<T>(key: string): T {
-    return this.dataList.find(x => x.key == key)?.value;
+    return this.dataList.find(x => x.key == key)?.value[key];
+  }
+
+  getDescByKey(key: string) {
+    return PyPilotKeyHelper.getDescription(key);
+  }
+
+  isValueExists(key: string): boolean {
+    return this.dataList.find(x => x.key == key) != null;
   }
 
 }

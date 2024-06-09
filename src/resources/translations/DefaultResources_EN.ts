@@ -1,0 +1,16 @@
+export const DefaultResources_EN = {
+  PowerOnButtonText: 'Power On',
+  PowerOffButtonText: 'Power Off',
+  OnStateText: 'Auto',
+  OffStateText: 'StandBy',
+  KompassLabel: 'Compass',
+  GPSLabel: 'GPS',
+  WindLabel: 'Wind',
+  PyPilotUrlLabel: 'PyPilot URL',
+  SignalKUrlLabel: 'SignalK URL',
+  SignalKPortLabel: 'SignalK Port',
+  SaveButtonLabel: 'Save',
+  ConnectionFailedMessageTitle: 'Connection Failed!',
+  ConnectionFailedMessageText: 'The connection to the central PyPilot server has been lost!',
+  SetCourseLabel: 'Target Course',
+}

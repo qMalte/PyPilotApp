@@ -1,29 +1,41 @@
 .numFieldWrapper {
   position: fixed;
   top: 0;
-  height: 100vh;
-  width: 100vw;
+  left: 0;
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   background:  rgba(0, 0, 0, 0.8);
   padding: 2rem;
 }
 
 .numFieldContainer {
-  height: 95%;
+  height: auto;
   width: 50%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background: #222;
   border-radius: 1rem;
   padding: 2rem;
   gap: 1rem;
+  max-width: 512px;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #c7c7c7;
 }
 
 .numFieldRow {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
+  max-width: 256px;
 }
 
 .numFieldRow > div {
@@ -63,4 +75,26 @@
   align-items: center;
    padding: 0 0.5rem;
   letter-spacing: 0.25rem;
+}
+
+.values {
+  display: flex;
+  gap: 1rem;
+  & > div {
+    padding: 0.5rem;
+    background: #222222;
+    border-radius: 0.5rem;
+    border: 0.5px solid #c7c7c7;
+  }
+}
+
+.top {
+  display: flex;
+  gap: 1rem;
+  & > .value {
+    width: 100%;
+  }
+  & > .numFieldRow {
+    width: auto;
+  }
 }

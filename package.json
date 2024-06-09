@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ngcc",
-    "generate-icon": "npx @capacitor/assets generate --ios --assetPath src/assets",
+    "generate-ios-icon": "npx @capacitor/assets generate --ios --assetPath src/assets",
+    "generate-android-icon": "npx @capacitor/assets generate --android --assetPath src/assets",
     "ios": "npx cap sync"
   },
   "private": true,
@@ -21,6 +22,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@capacitor/android": "^6.0.0",
     "@capacitor/core": "^6.0.0",
     "@capacitor/ios": "^6.0.0",
     "generate-icon": "^0.1.13",

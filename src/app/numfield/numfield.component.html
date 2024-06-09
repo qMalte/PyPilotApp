@@ -1,6 +1,14 @@
 <div *ngIf="service.visible" class="numFieldWrapper">
   <div class="numFieldContainer">
-    <div class="value" [innerHTML]="service.value"></div>
+    <div class="title">{{ service.title }}</div>
+    <div class="top">
+      <div class="value" [innerHTML]="service.value == '' ? service.initialValue : service.value"></div>
+      <div class="numFieldRow">
+        <div (click)="removeDigit()">
+          <img src="assets/delete.png" style="width: 24px; height: 24px">
+        </div>
+      </div>
+    </div>
     <div class="numFieldRow">
       <div (click)="addDigit('1')">1</div>
       <div (click)="addDigit('2')">2</div>
@@ -17,7 +25,9 @@
       <div (click)="addDigit('9')">9</div>
     </div>
     <div class="numFieldRow">
+      <div *ngIf="service.value.toString().includes('.')" (click)="addDigit('.')">,</div>
       <div (click)="addDigit('0')">0</div>
+      <div *ngIf="service.value.length == 0" (click)="addDigit('-')">-</div>
     </div>
     <div class="numFieldRowActions">
       <button class="cancel" type="button" (click)="service.cancel()">Verwerfen</button>

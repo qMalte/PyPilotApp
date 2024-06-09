@@ -10,12 +10,21 @@ import {NumfieldService} from "./numfield.service";
   styleUrl: './numfield.component.scss'
 })
 export class NumfieldComponent {
+
   constructor(public service: NumfieldService) {
     //
   }
 
   addDigit(digit: string) {
     this.service.value += digit;
+  }
+
+  removeDigit() {
+    this.service.value = this.service.value.toString().slice(0, -1);
+  }
+
+  round(number: number) {
+    return Math.round(number * 100) / 100;
   }
 
 }

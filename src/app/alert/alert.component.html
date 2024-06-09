@@ -10,21 +10,21 @@
       </div>
       <div class="form">
         <span class="span-in">
-          <label>PyPilot URL</label>
+          <label [innerText]="Resource.PyPilotUrlLabel"></label>
           <input [(ngModel)]="pyPyPilotUrl" type="text">
         </span>
         <div>
           <span class="span-in">
-            <label>SignalK Host</label>
+            <label [innerText]="Resource.SignalKUrlLabel"></label>
             <input [(ngModel)]="signalKUrl" type="text">
           </span>
           <span class="span-in">
-            <label>SignalK Port</label>
+            <label [innerText]="Resource.SignalKPortLabel"></label>
             <input [(ngModel)]="signalKPort" class="sm" type="text">
           </span>
         </div>
         <div>
-          <button (click)="saveAndRestart()" type="button">Speichern</button>
+          <button (click)="saveAndRestart()" type="button" [innerText]="Resource.SaveButtonLabel"></button>
         </div>
       </div>
     </div>

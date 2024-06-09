@@ -18,6 +18,12 @@
   gap: 0.5rem;
 }
 
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .item {
   display: flex;
   height: auto;
@@ -26,12 +32,21 @@
   border-radius: 0.5rem;
   min-height: 50px;
   align-items: center;
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
 }
 
 .descriptions {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (max-width: 700px) {
+    gap: 0.25rem;
+  }
 }
 
 .values {

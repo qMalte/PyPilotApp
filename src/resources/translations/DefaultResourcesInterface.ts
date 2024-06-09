@@ -1,0 +1,16 @@
+export interface DefaultResourcesInterface {
+  PowerOnButtonText: string,
+  PowerOffButtonText: string,
+  OnStateText: string,
+  OffStateText: string,
+  KompassLabel: string,
+  GPSLabel: string,
+  WindLabel: string,
+  PyPilotUrlLabel: string,
+  SignalKUrlLabel: string,
+  SignalKPortLabel: string,
+  SaveButtonLabel: string,
+  ConnectionFailedMessageTitle: string,
+  ConnectionFailedMessageText: string,
+  SetCourseLabel: string,
+}

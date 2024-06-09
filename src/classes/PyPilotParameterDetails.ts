@@ -1,1077 +1,1071 @@
 export const PyPilotParameterDetails = {
-    "profile": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true,
-        "writable": true
-    },
-    "profiles": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true,
-        "writable": true
-    },
-    "imu.rate": {
-        "desc": "Property-Description",
-        "type": "EnumProperty",
-        "persistent": true,
-        "writable": true,
-        "choices": [
-            10,
-            20
-        ]
-    },
-    "imu.alignmentQ": {
-        "desc": "Property-Description",
-        "type": "ResettableValue",
-        "persistent": true,
-        "writable": true
-    },
-    "imu.heading_offset": {
-        "desc": "Kompass Offset",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": -180,
-        "max": 180
-    },
-    "imu.gyrobias": {
-        "desc": "Property-Description",
-        "type": "SensorValue",
-        "persistent": true
-    },
-    "imu.accel.calibration": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true
-    },
-    "imu.accel.calibration.locked": {
-        "desc": "Kompass Kalibrierung sperren",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "imu.accel.calibration.points": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true
-    },
-    "imu.compass.calibration": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true
-    },
-    "imu.compass.calibration.locked": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "imu.compass.calibration.points": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true
-    },
-    "nmea.client": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true,
-        "writable": true
-    },
-    "nmea.gps_id": {
-        "desc": "Property-Description",
-        "type": "EnumProperty",
-        "persistent": true,
-        "writable": true,
-        "choices": [
-            "APRMC",
-            "GPRMC"
-        ]
-    },
-    "gps.filtered.output": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "wind.offset": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "persistent": true,
-        "writable": true,
-        "min": -180,
-        "max": 180,
-        "units": "deg"
-    },
-    "wind.sensors_height": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 100
-    },
-    "truewind.offset": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "persistent": true,
-        "writable": true,
-        "min": -180,
-        "max": 180,
-        "units": "deg"
-    },
-    "truewind.sensors_height": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 100
-    },
-    "rudder.offset": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true
-    },
-    "rudder.scale": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true
-    },
-    "rudder.nonlinearity": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true
-    },
-    "rudder.range": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 10,
-        "max": 100
-    },
-    "apb.xte.gain": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 3000
-    },
-    "servo.faults": {
-        "desc": "Property-Description",
-        "type": "ResettableValue",
-        "persistent": true,
-        "writable": true
-    },
-    "servo.max_current": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 50,
-        "units": "amps"
-    },
-    "servo.current.factor": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 0.8,
-        "max": 1.2
-    },
-    "servo.current.offset": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": -1.2,
-        "max": 1.2
-    },
-    "servo.voltage.factor": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 0.8,
-        "max": 1.2
-    },
-    "servo.voltage.offset": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": -1.2,
-        "max": 1.2
-    },
-    "servo.max_controller_temp": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 45,
-        "max": 80
-    },
-    "servo.max_motor_temp": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 30,
-        "max": 80
-    },
-    "servo.max_slew_speed": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 100,
-        "units": ""
-    },
-    "servo.max_slew_slow": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 100,
-        "units": ""
-    },
-    "servo.gain": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": -10,
-        "max": 10
-    },
-    "servo.clutch_pwm": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 10,
-        "max": 100
-    },
-    "servo.use_brake": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "servo.compensate_current": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "servo.compensate_voltage": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "servo.amp_hours": {
-        "desc": "Property-Description",
-        "type": "ResettableValue",
-        "persistent": true,
-        "writable": true
-    },
-    "servo.position.p": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 0.01,
-        "max": 1
-    },
-    "servo.position.i": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 0.1
-    },
-    "servo.position.d": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 0.1
-    },
-    "servo.use_eeprom": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true
-    },
-    "ap.mode": {
-        "desc": "Steuermodus",
-        "type": "EnumProperty",
-        "persistent": true,
-        "writable": true,
-        "choices": [
-            "compass",
-            "gps",
-            "nav",
-            "wind",
-            "true wind"
-        ]
-    },
-    "ap.gps_and_nav_modes": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "ap.tack.count": {
-        "desc": "Property-Description",
-        "type": "ResettableValue",
-        "persistent": true,
-        "writable": true
-    },
-    "ap.tack.use_heel": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "ap.tack.use_wind_direction": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "gps.filtered.enabled": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "persistent": true,
-        "writable": true
-    },
-    "signalk.period": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "persistent": true,
-        "writable": true,
-        "min": 0.1,
-        "max": 2
-    },
-    "signalk.uid": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "persistent": true,
-        "writable": true
-    },
-    "servo.period": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0.1,
-        "max": 3,
-        "units": "sec"
-    },
-    "servo.speed.min": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 100,
-        "units": "%"
-    },
-    "servo.speed.max": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 100,
-        "units": "%"
-    },
-    "ap.pilot.absolute.P": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 2,
-        "AutopilotGain": true
-    },
-    "ap.pilot.absolute.I": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 0.05,
-        "AutopilotGain": true
-    },
-    "ap.pilot.absolute.D": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 2,
-        "AutopilotGain": true
-    },
-    "ap.pilot.absolute.DD": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 1,
-        "AutopilotGain": true
-    },
-    "ap.pilot.basic.P": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 0.1,
-        "AutopilotGain": true
-    },
-    "ap.pilot.basic.I": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 0.1,
-        "AutopilotGain": true
-    },
-    "ap.pilot.basic.D": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 0.24,
-        "AutopilotGain": true
-    },
-    "ap.pilot.basic.DD": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 0.24,
-        "AutopilotGain": true
-    },
-    "ap.pilot.basic.PR": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 0.02,
-        "AutopilotGain": true
-    },
-    "ap.pilot.basic.FF": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 2.4,
-        "AutopilotGain": true
-    },
-    "ap.pilot": {
-        "desc": "Property-Description",
-        "type": "EnumProperty",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "choices": [
-            "absolute",
-            "basic"
-        ]
-    },
-    "ap.tack.delay": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 0,
-        "max": 60,
-        "units": "sec"
-    },
-    "ap.tack.angle": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 10,
-        "max": 180,
-        "units": "deg"
-    },
-    "ap.tack.rate": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 1,
-        "max": 100,
-        "units": "deg\/s"
-    },
-    "ap.tack.threshold": {
-        "desc": "Property-Description",
-        "type": "RangeSetting",
-        "profiled": true,
-        "persistent": true,
-        "writable": true,
-        "min": 10,
-        "max": 100,
-        "units": "%"
-    },
-    "gps.filtered.declination": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "gps.filtered.time_offset": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "gps.filtered.compass_offset": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "gps.filtered.fix": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "gps.filtered.speed": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "gps.filtered.track": {
-        "desc": "Property-Description",
-        "type": "SensorValue",
-        "directional": true
-    },
-    "gps.source": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "wind.source": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "truewind.source": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "rudder.source": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "apb.source": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "water.source": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "imu.frequency": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.alignmentCounter": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "writable": true
-    },
-    "imu.uptime": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "imu.warning": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "imu.heading_lowpass_constant": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": 0.05,
-        "max": 0.3
-    },
-    "imu.headingrate_lowpass_constant": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": 0.05,
-        "max": 0.3
-    },
-    "imu.headingraterate_lowpass_constant": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": 0.05,
-        "max": 0.3
-    },
-    "imu.accel": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.gyro": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.compass": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.accel.residuals": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.pitch": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.roll": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.pitchrate": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.rollrate": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.headingrate": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.headingraterate": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.heel": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.headingrate_lowpass": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.headingraterate_lowpass": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.heading": {
-        "desc": "Property-Description",
-        "type": "SensorValue",
-        "directional": true
-    },
-    "imu.heading_lowpass": {
-        "desc": "Property-Description",
-        "type": "SensorValue",
-        "directional": true
-    },
-    "imu.fusionQPose": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "gps.rate": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": 0,
-        "max": 50
-    },
-    "gps.track": {
-        "desc": "Property-Description",
-        "type": "SensorValue",
-        "directional": true
-    },
-    "gps.speed": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "gps.fix": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "gps.leeway_ground": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "gps.compass_error": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "gps.declination": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "gps.alignmentCounter": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "writable": true
-    },
-    "wind.rate": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": 0,
-        "max": 50
-    },
-    "wind.direction": {
-        "desc": "Property-Description",
-        "type": "SensorValue",
-        "directional": true
-    },
-    "wind.speed": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "truewind.rate": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": 0,
-        "max": 50
-    },
-    "truewind.direction": {
-        "desc": "Property-Description",
-        "type": "SensorValue",
-        "directional": true
-    },
-    "truewind.speed": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "rudder.rate": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": 0,
-        "max": 50
-    },
-    "rudder.angle": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "rudder.speed": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "rudder.calibration_state": {
-        "desc": "Property-Description",
-        "type": "EnumProperty",
-        "writable": true,
-        "choices": [
-            "idle",
-            "reset",
-            "centered",
-            "starboard range",
-            "port range",
-            "auto gain"
-        ]
-    },
-    "apb.track": {
-        "desc": "Property-Description",
-        "type": "SensorValue",
-        "directional": true
-    },
-    "apb.xte": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "water.rate": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": 0,
-        "max": 50
-    },
-    "water.speed": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "water.leeway": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "water.leeway.source": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "water.current.speed": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "water.current.direction": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "water.wind.speed": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "water.wind.direction": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.calibration": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "servo.position_command": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "writable": true
-    },
-    "servo.command": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "writable": true
-    },
-    "servo.speed_gain": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": 0,
-        "max": 1
-    },
-    "servo.duty": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.voltage": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.current": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.current.noise": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.controller_temp": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.motor_temp": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.engaged": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "servo.watts": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.speed": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.position": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.raw_command": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "servo.state": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "servo.controller": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "servo.flags": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "ap.version": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "timestamp": {
-        "desc": "Property-Description",
-        "type": "TimeStamp"
-    },
-    "ap.preferred_mode": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "ap.modes": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "ap.heading_command": {
-        "desc": "Property-Description",
-        "type": "RangeProperty",
-        "writable": true,
-        "min": -180,
-        "max": 360
-    },
-    "ap.enabled": {
-        "desc": "Property-Description",
-        "type": "BooleanProperty",
-        "writable": true
-    },
-    "ap.heading": {
-        "desc": "Property-Description",
-        "type": "SensorValue",
-        "directional": true
-    },
-    "ap.heading_error": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.heading_error_int": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.heading_command_rate": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.absolute.Pgain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.absolute.Igain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.absolute.Dgain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.absolute.DDgain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.basic.Pgain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.basic.Igain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.basic.Dgain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.basic.DDgain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.basic.PRgain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.pilot.basic.FFgain": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "ap.tack.state": {
-        "desc": "Property-Description",
-        "type": "EnumProperty",
-        "writable": true,
-        "choices": [
-            "none",
-            "begin",
-            "waiting",
-            "tacking"
-        ]
-    },
-    "ap.tack.timeout": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "ap.tack.direction": {
-        "desc": "Property-Description",
-        "type": "EnumProperty",
-        "writable": true,
-        "choices": [
-            "none",
-            "port",
-            "starboard"
-        ]
-    },
-    "ap.runtime": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "ap.timings": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.error": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "imu.accel.calibration.age": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "imu.accel.calibration.sigmapoints": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "imu.accel.calibration.log": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "writable": true
-    },
-    "imu.compass.calibration.age": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "imu.compass.calibration.sigmapoints": {
-        "desc": "Property-Description",
-        "type": "Value"
-    },
-    "imu.compass.calibration.log": {
-        "desc": "Property-Description",
-        "type": "Value",
-        "writable": true
-    },
-    "imu.compass.calibration.field_strength": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    },
-    "imu.compass.calibration.inclination": {
-        "desc": "Property-Description",
-        "type": "SensorValue"
-    }
+  "profile": {
+    "type": "Value",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "profiles": {
+    "type": "Value",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "imu.rate": {
+    "type": "EnumProperty",
+    "persistent": true,
+    "writable": true,
+    "choices": [
+      10,
+      20
+    ],
+    "isDisplayed": true
+  },
+  "imu.alignmentQ": {
+    "type": "ResettableValue",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "imu.heading_offset": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": -180,
+    "max": 180,
+    "isDisplayed": true
+  },
+  "imu.gyrobias": {
+    "type": "SensorValue",
+    "persistent": true,
+    "isDisplayed": false
+  },
+  "imu.accel.calibration": {
+    "type": "Value",
+    "persistent": true,
+    "isDisplayed": true
+  },
+  "imu.accel.calibration.locked": {
+    "type": "BooleanProperty",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": true
+  },
+  "imu.accel.calibration.points": {
+    "type": "Value",
+    "persistent": true,
+    "isDisplayed": false
+  },
+  "imu.compass.calibration": {
+    "type": "Value",
+    "persistent": true,
+    "isDisplayed": false
+  },
+  "imu.compass.calibration.points": {
+    "type": "Value",
+    "persistent": true,
+    "isDisplayed": false
+  },
+  "nmea.client": {
+    "type": "Value",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "nmea.gps_id": {
+    "type": "EnumProperty",
+    "persistent": true,
+    "writable": true,
+    "choices": [
+      "APRMC",
+      "GPRMC"
+    ],
+    "isDisplayed": false
+  },
+  "gps.filtered.output": {
+    "type": "BooleanProperty",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "wind.offset": {
+    "type": "RangeSetting",
+    "persistent": true,
+    "writable": true,
+    "min": -180,
+    "max": 180,
+    "units": "deg",
+    "isDisplayed": true
+  },
+  "wind.sensors_height": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 100,
+    "isDisplayed": true
+  },
+  "truewind.offset": {
+    "type": "RangeSetting",
+    "persistent": true,
+    "writable": true,
+    "min": -180,
+    "max": 180,
+    "units": "deg",
+    "isDisplayed": true
+  },
+  "truewind.sensors_height": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 100,
+    "isDisplayed": false
+  },
+  "rudder.offset": {
+    "type": "Value",
+    "persistent": true,
+    "isDisplayed": true
+  },
+  "rudder.scale": {
+    "type": "Value",
+    "persistent": true,
+    "isDisplayed": true
+  },
+  "rudder.nonlinearity": {
+    "type": "Value",
+    "persistent": true,
+    "isDisplayed": true
+  },
+  "rudder.range": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 10,
+    "max": 100,
+    "isDisplayed": true
+  },
+  "apb.xte.gain": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 3000,
+    "isDisplayed": false
+  },
+  "servo.faults": {
+    "type": "ResettableValue",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "servo.max_current": {
+    "type": "RangeSetting",
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 50,
+    "units": "amps",
+    "isDisplayed": false
+  },
+  "servo.current.factor": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 0.8,
+    "max": 1.2,
+    "isDisplayed": false
+  },
+  "servo.current.offset": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": -1.2,
+    "max": 1.2,
+    "isDisplayed": false
+  },
+  "servo.voltage.factor": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 0.8,
+    "max": 1.2,
+    "isDisplayed": false
+  },
+  "servo.voltage.offset": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": -1.2,
+    "max": 1.2,
+    "isDisplayed": false
+  },
+  "servo.max_controller_temp": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 45,
+    "max": 80,
+    "isDisplayed": false
+  },
+  "servo.max_motor_temp": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 30,
+    "max": 80,
+    "isDisplayed": false
+  },
+  "servo.max_slew_speed": {
+    "type": "RangeSetting",
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 100,
+    "units": "",
+    "isDisplayed": false
+  },
+  "servo.max_slew_slow": {
+    "type": "RangeSetting",
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 100,
+    "units": "",
+    "isDisplayed": false
+  },
+  "servo.gain": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": -10,
+    "max": 10,
+    "isDisplayed": false
+  },
+  "servo.clutch_pwm": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 10,
+    "max": 100,
+    "isDisplayed": false
+  },
+  "servo.use_brake": {
+    "type": "BooleanProperty",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "servo.compensate_current": {
+    "type": "BooleanProperty",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "servo.compensate_voltage": {
+    "type": "BooleanProperty",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "servo.amp_hours": {
+    "type": "ResettableValue",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "servo.position.p": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 0.01,
+    "max": 1,
+    "isDisplayed": false
+  },
+  "servo.position.i": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 0.1,
+    "isDisplayed": false
+  },
+  "servo.position.d": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 0.1,
+    "isDisplayed": false
+  },
+  "servo.use_eeprom": {
+    "type": "Value",
+    "persistent": true,
+    "isDisplayed": false
+  },
+  "ap.mode": {
+    "type": "EnumProperty",
+    "persistent": true,
+    "writable": true,
+    "choices": [
+      "compass",
+      "gps",
+      "nav",
+      "wind",
+      "true wind"
+    ],
+    "isDisplayed": false
+  },
+  "ap.gps_and_nav_modes": {
+    "type": "BooleanProperty",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "ap.tack.count": {
+    "type": "ResettableValue",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "ap.tack.use_heel": {
+    "type": "BooleanProperty",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "ap.tack.use_wind_direction": {
+    "type": "BooleanProperty",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "gps.filtered.enabled": {
+    "type": "BooleanProperty",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "signalk.period": {
+    "type": "RangeProperty",
+    "persistent": true,
+    "writable": true,
+    "min": 0.1,
+    "max": 2,
+    "isDisplayed": false
+  },
+  "signalk.uid": {
+    "type": "Value",
+    "persistent": true,
+    "writable": true,
+    "isDisplayed": false
+  },
+  "servo.period": {
+    "type": "RangeSetting",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0.1,
+    "max": 3,
+    "units": "sec",
+    "isDisplayed": false
+  },
+  "servo.speed.min": {
+    "type": "RangeSetting",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 100,
+    "units": "%",
+    "isDisplayed": true
+  },
+  "servo.speed.max": {
+    "type": "RangeSetting",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 100,
+    "units": "%",
+    "isDisplayed": true
+  },
+  "ap.pilot.absolute.P": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 2,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot.absolute.I": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 0.05,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot.absolute.D": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 2,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot.absolute.DD": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 1,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot.basic.P": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 0.1,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot.basic.I": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 0.1,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot.basic.D": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 0.24,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot.basic.DD": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 0.24,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot.basic.PR": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 0.02,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot.basic.FF": {
+    "type": "RangeProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 2.4,
+    "AutopilotGain": true,
+    "isDisplayed": true
+  },
+  "ap.pilot": {
+    "type": "EnumProperty",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "choices": [
+      "absolute",
+      "basic"
+    ],
+    "isDisplayed": false
+  },
+  "ap.tack.delay": {
+    "type": "RangeSetting",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 0,
+    "max": 60,
+    "units": "sec",
+    "isDisplayed": false
+  },
+  "ap.tack.angle": {
+    "type": "RangeSetting",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 10,
+    "max": 180,
+    "units": "deg",
+    "isDisplayed": false
+  },
+  "ap.tack.rate": {
+    "type": "RangeSetting",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 1,
+    "max": 100,
+    "units": "deg/s",
+    "isDisplayed": false
+  },
+  "ap.tack.threshold": {
+    "type": "RangeSetting",
+    "profiled": true,
+    "persistent": true,
+    "writable": true,
+    "min": 10,
+    "max": 100,
+    "units": "%",
+    "isDisplayed": false
+  },
+  "gps.filtered.declination": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "gps.filtered.time_offset": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "gps.filtered.compass_offset": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "gps.filtered.fix": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "gps.filtered.speed": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "gps.filtered.track": {
+    "type": "SensorValue",
+    "directional": true,
+    "isDisplayed": false
+  },
+  "gps.source": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "wind.source": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "truewind.source": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "rudder.source": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "apb.source": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "water.source": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "imu.frequency": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.alignmentCounter": {
+    "type": "Value",
+    "writable": true,
+    "isDisplayed": false
+  },
+  "imu.uptime": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "imu.warning": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "imu.heading_lowpass_constant": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": 0.05,
+    "max": 0.3,
+    "isDisplayed": false
+  },
+  "imu.headingrate_lowpass_constant": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": 0.05,
+    "max": 0.3,
+    "isDisplayed": false
+  },
+  "imu.headingraterate_lowpass_constant": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": 0.05,
+    "max": 0.3,
+    "isDisplayed": false
+  },
+  "imu.accel": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.gyro": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.compass": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.accel.residuals": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.pitch": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.roll": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.pitchrate": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.rollrate": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.headingrate": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.headingraterate": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.heel": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.headingrate_lowpass": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.headingraterate_lowpass": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.heading": {
+    "type": "SensorValue",
+    "directional": true,
+    "isDisplayed": false
+  },
+  "imu.heading_lowpass": {
+    "type": "SensorValue",
+    "directional": true,
+    "isDisplayed": false
+  },
+  "imu.fusionQPose": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "gps.rate": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": 0,
+    "max": 50,
+    "isDisplayed": false
+  },
+  "gps.track": {
+    "type": "SensorValue",
+    "directional": true,
+    "isDisplayed": false
+  },
+  "gps.speed": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "gps.fix": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "gps.leeway_ground": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "gps.compass_error": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "gps.declination": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "gps.alignmentCounter": {
+    "type": "Value",
+    "writable": true,
+    "isDisplayed": false
+  },
+  "wind.rate": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": 0,
+    "max": 50,
+    "isDisplayed": false
+  },
+  "wind.direction": {
+    "type": "SensorValue",
+    "directional": true,
+    "isDisplayed": false
+  },
+  "wind.speed": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "truewind.rate": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": 0,
+    "max": 50,
+    "isDisplayed": false
+  },
+  "truewind.direction": {
+    "type": "SensorValue",
+    "directional": true,
+    "isDisplayed": false
+  },
+  "truewind.speed": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "rudder.rate": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": 0,
+    "max": 50,
+    "isDisplayed": false
+  },
+  "rudder.angle": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "rudder.speed": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "rudder.calibration_state": {
+    "type": "EnumProperty",
+    "writable": true,
+    "choices": [
+      "idle",
+      "reset",
+      "centered",
+      "starboard range",
+      "port range",
+      "auto gain"
+    ],
+    "isDisplayed": false
+  },
+  "apb.track": {
+    "type": "SensorValue",
+    "directional": true,
+    "isDisplayed": false
+  },
+  "apb.xte": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "water.rate": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": 0,
+    "max": 50,
+    "isDisplayed": false
+  },
+  "water.speed": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "water.leeway": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "water.leeway.source": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "water.current.speed": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "water.current.direction": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "water.wind.speed": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "water.wind.direction": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.calibration": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "servo.position_command": {
+    "type": "Value",
+    "writable": true,
+    "isDisplayed": false
+  },
+  "servo.command": {
+    "type": "Value",
+    "writable": true,
+    "isDisplayed": false
+  },
+  "servo.speed_gain": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": 0,
+    "max": 1,
+    "isDisplayed": false
+  },
+  "servo.duty": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.voltage": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.current": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.current.noise": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.controller_temp": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.motor_temp": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.engaged": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "servo.watts": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.speed": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.position": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.raw_command": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "servo.state": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "servo.controller": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "servo.flags": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "ap.version": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "timestamp": {
+    "type": "TimeStamp",
+    "isDisplayed": false
+  },
+  "ap.preferred_mode": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "ap.modes": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "ap.heading_command": {
+    "type": "RangeProperty",
+    "writable": true,
+    "min": -180,
+    "max": 360,
+    "isDisplayed": false
+  },
+  "ap.enabled": {
+    "type": "BooleanProperty",
+    "writable": true,
+    "isDisplayed": false
+  },
+  "ap.heading": {
+    "type": "SensorValue",
+    "directional": true,
+    "isDisplayed": false
+  },
+  "ap.heading_error": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.heading_error_int": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.heading_command_rate": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.absolute.Pgain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.absolute.Igain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.absolute.Dgain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.absolute.DDgain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.basic.Pgain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.basic.Igain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.basic.Dgain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.basic.DDgain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.basic.PRgain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.pilot.basic.FFgain": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "ap.tack.state": {
+    "type": "EnumProperty",
+    "writable": true,
+    "choices": [
+      "none",
+      "begin",
+      "waiting",
+      "tacking"
+    ],
+    "isDisplayed": false
+  },
+  "ap.tack.timeout": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "ap.tack.direction": {
+    "type": "EnumProperty",
+    "writable": true,
+    "choices": [
+      "none",
+      "port",
+      "starboard"
+    ],
+    "isDisplayed": false
+  },
+  "ap.runtime": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "ap.timings": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.error": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "imu.accel.calibration.age": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "imu.accel.calibration.sigmapoints": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "imu.accel.calibration.log": {
+    "type": "Value",
+    "writable": true,
+    "isDisplayed": false
+  },
+  "imu.compass.calibration.age": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "imu.compass.calibration.sigmapoints": {
+    "type": "Value",
+    "isDisplayed": false
+  },
+  "imu.compass.calibration.log": {
+    "type": "Value",
+    "writable": true,
+    "isDisplayed": false
+  },
+  "imu.compass.calibration.field_strength": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  },
+  "imu.compass.calibration.inclination": {
+    "type": "SensorValue",
+    "isDisplayed": false
+  }
 }

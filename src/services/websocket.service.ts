@@ -4,6 +4,8 @@ import {AlertService} from "../app/alert/alert.service";
 import {environment} from "../environments/environment";
 import {PyPilotData} from "../classes/PyPilotData";
 import {PyPilotParameter} from "../classes/PyPilotParameter";
+import {Subject} from "rxjs";
+import {ResourceHelper} from "../helpers/ResourceHelper";
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +13,7 @@ import {PyPilotParameter} from "../classes/PyPilotParameter";
 export class WebsocketService {
 
   socket: Socket;
+  changed = new Subject<void>();
 
   private watchList: string[] = [];
   private dataList: PyPilotData[] = [];
@@ -27,6 +30,7 @@ export class WebsocketService {
     });
 
     this.socket.on("pypilot", (msg) => {
+      this.changed.next();
       const data = JSON.parse(msg);
       for (const key in data) {
         const item = this.dataList.find(d => d.key === key);
@@ -63,16 +67,16 @@ export class WebsocketService {
     this.socket.on("pypilot_disconnect", () => {
       console.debug('Verbindung über WebSocket wurde getrennt!');
       alertService.show(
-        'Verbindung Fehlgeschlagen!',
-        'Die Verbindung zum zentralen PyPilot-Server wurde getrennt!');
+        ResourceHelper.DefaultResource.ConnectionFailedMessageTitle,
+        ResourceHelper.DefaultResource.ConnectionFailedMessageText);
     });
 
     this.socket.on("connect_error", (e) => {
       console.debug('Verbindung über WebSocket konnte nicht hergestellt werden!');
       console.debug(e);
       alertService.show(
-        'Verbindung Fehlgeschlagen!',
-        'Die Verbindung zum zentralen PyPilot-Server wurde getrennt!');
+        ResourceHelper.DefaultResource.ConnectionFailedMessageTitle,
+        ResourceHelper.DefaultResource.ConnectionFailedMessageText);
     });
 
   }

@@ -6,6 +6,7 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {RuderSenseComponent} from "../ruder-sense/ruder-sense.component";
 import {PyPilotParameter} from "../../classes/PyPilotParameter";
+import {ResourceHelper} from "../../helpers/ResourceHelper";
 
 @Component({
   selector: 'app-status',
@@ -19,6 +20,10 @@ export class StatusComponent {
 
   constructor(private socketService: WebsocketService) {
     //
+  }
+
+  get Resource() {
+    return ResourceHelper.DefaultResource;
   }
 
   get apModeClass() {
@@ -92,6 +97,7 @@ export class StatusComponent {
     }, 1000);
   }
 
+  protected readonly ResourceHelper = ResourceHelper;
 }
 
 export enum ApMode {

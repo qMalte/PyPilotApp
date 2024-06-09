@@ -3,14 +3,25 @@ import {EventEmitter, Injectable} from "@angular/core";
 @Injectable()
 export class NumfieldService {
 
-  visible: boolean = false;
+  title = '';
+  visible = false;
+  initialValue = '';
   value = '';
-  actionPerformed: EventEmitter<string|null> = new EventEmitter<string|null>();
+  actionPerformed = new EventEmitter<string|null>();
 
-  open() {
+  open(value: string, title: string): Promise<string|null> {
     return new Promise<string|null>(resolve => {
+
+      if (Array.isArray(value)) {
+        this.visible = false;
+        resolve(null);
+        return;
+      }
+
+      this.title = title;
       this.visible = true;
-      this.value = '';
+      this.initialValue = value;
+      this.value = value;
       this.actionPerformed.subscribe(value => {
         this.visible = false;
         resolve(value);
