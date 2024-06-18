@@ -18,11 +18,14 @@
             <label [innerText]="Resource.SignalKUrlLabel"></label>
             <input [(ngModel)]="signalKUrl" type="text">
           </span>
-          <span class="span-in">
+          <span class="span-in sm">
             <label [innerText]="Resource.SignalKPortLabel"></label>
-            <input [(ngModel)]="signalKPort" class="sm" type="text">
+            <input [(ngModel)]="signalKPort" type="text">
           </span>
         </div>
+        <span class="span-in">
+          <textarea [disabled]="true" [innerText]="alertService.stackTrace" rows="3"></textarea>
+        </span>
         <div>
           <button (click)="saveAndRestart()" type="button" [innerText]="Resource.SaveButtonLabel"></button>
         </div>

@@ -78,12 +78,7 @@ input {
   border-radius: 0.25rem;
   background: #222;
   letter-spacing: 0.05rem;
-  &.sm {
-    width: 30%;
-    @media screen and (max-width: 768px) {
-      width: 75%;
-    }
-  }
+  width: 100%;
   &:focus {
     outline: none;
     border-color: #2070d0;
@@ -119,4 +114,17 @@ button {
     font-style: italic;
     color: #ccc;
   }
+  &.sm {
+    width: 30%;
+    @media screen and (max-width: 768px) {
+      width: 75%;
+    }
+  }
+}
+
+textarea {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: #252525;
+  color: #8d8d8d;
 }

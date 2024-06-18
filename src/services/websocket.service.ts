@@ -76,7 +76,7 @@ export class WebsocketService {
       console.debug(e);
       alertService.show(
         ResourceHelper.DefaultResource.ConnectionFailedMessageTitle,
-        ResourceHelper.DefaultResource.ConnectionFailedMessageText);
+        ResourceHelper.DefaultResource.ConnectionFailedMessageText, -1, e.stack);
     });
 
   }
