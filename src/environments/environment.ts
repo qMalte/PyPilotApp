@@ -4,7 +4,7 @@ const pyPilotUrl = () => {
 }
 
 const signalKHost = () => {
-  const storageValue = localStorage.getItem('signalKHost');
+  const storageValue = localStorage.getItem('signalKUrl');
   return storageValue ? storageValue : '192.168.123.254';
 }
 
@@ -17,4 +17,5 @@ export const environment = {
   pyPilotUrl: pyPilotUrl(),
   signalKHost: signalKHost(),
   signalKPort: signalKPort(),
+  fixValues: false
 };

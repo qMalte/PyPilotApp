@@ -8,7 +8,7 @@
       <div class="message">
         {{ alertService.message }}
       </div>
-      <div class="form">
+      <div *ngIf="!isFixedConfiguration" class="form">
         <span class="span-in">
           <label [innerText]="Resource.PyPilotUrlLabel"></label>
           <input [(ngModel)]="pyPyPilotUrl" type="text">

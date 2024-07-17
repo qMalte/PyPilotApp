@@ -41,6 +41,7 @@ export class RuderSenseComponent implements OnInit {
         switch (element.getDesc()) {
           case 'steering.rudderAngle':
             const data = element.getValue();
+            console.log('Rudder Angle: ' + data);
             this.ruderAngle = this.umrechnenWert(this.radiansToDegrees(data));
             this.updateRudderGauge();
             break;

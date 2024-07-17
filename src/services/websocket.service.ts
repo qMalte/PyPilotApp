@@ -25,58 +25,63 @@ export class WebsocketService {
 
     this.socket.on("connect", () => {
       console.log('Verbindung über WebSocket wurde erfolgreich hergestellt!');
-      this.alertService.hide();
-      this.prepareWatching();
-    });
 
-    this.socket.on("pypilot", (msg) => {
-      this.changed.next();
-      const data = JSON.parse(msg);
-      for (const key in data) {
-        const item = this.dataList.find(d => d.key === key);
-        if (item != null) {
-          item.value = data;
-        } else {
-          this.dataList.push({
-            key: key,
-            value: data[key]
-          });
-        }
-      }
-      for (const param in PyPilotParameter) {
-        // @ts-ignore
-        const key = PyPilotParameter[param];
-        if (key in data) {
-
-          // @ts-ignore
-          const value = data[key];
-
+      this.socket.on("pypilot", (msg) => {
+        this.changed.next();
+        const data = JSON.parse(msg);
+        for (const key in data) {
           const item = this.dataList.find(d => d.key === key);
           if (item != null) {
             item.value = data;
           } else {
             this.dataList.push({
               key: key,
-              value
+              value: data[key]
             });
           }
         }
-      }
-    });
+        for (const param in PyPilotParameter) {
+          // @ts-ignore
+          const key = PyPilotParameter[param];
+          if (key in data) {
 
-    this.socket.on("pypilot_disconnect", () => {
-      console.debug('Verbindung über WebSocket wurde getrennt!');
-      alertService.show(
-        ResourceHelper.DefaultResource.ConnectionFailedMessageTitle,
-        ResourceHelper.DefaultResource.ConnectionFailedMessageText);
-    });
+            // @ts-ignore
+            const value = data[key];
 
-    this.socket.on("connect_error", (e) => {
-      console.debug('Verbindung über WebSocket konnte nicht hergestellt werden!');
-      console.debug(e);
-      alertService.show(
-        ResourceHelper.DefaultResource.ConnectionFailedMessageTitle,
-        ResourceHelper.DefaultResource.ConnectionFailedMessageText, -1, e.stack);
+            const item = this.dataList.find(d => d.key === key);
+            if (item != null) {
+              item.value = data;
+            } else {
+              this.dataList.push({
+                key: key,
+                value
+              });
+            }
+          }
+        }
+      });
+
+      this.socket.on("pypilot_disconnect", () => {
+        console.debug('Verbindung über WebSocket wurde getrennt!');
+        alertService.show(
+          ResourceHelper.DefaultResource.ConnectionFailedMessageTitle,
+          ResourceHelper.DefaultResource.ConnectionFailedMessageText);
+      });
+
+      this.socket.on("connect_error", (e) => {
+        console.debug('Verbindung über WebSocket konnte nicht hergestellt werden!');
+        console.debug(e);
+        alertService.show(
+          ResourceHelper.DefaultResource.ConnectionFailedMessageTitle,
+          ResourceHelper.DefaultResource.ConnectionFailedMessageText, -1, e.stack);
+      });
+
+      this.alertService.hide();
+
+      setTimeout(() => {
+        this.prepareWatching();
+      }, 200);
+
     });
 
   }

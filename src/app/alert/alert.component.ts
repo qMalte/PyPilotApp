@@ -17,6 +17,7 @@ export class AlertComponent {
   pyPyPilotUrl = environment.pyPilotUrl;
   signalKUrl = environment.signalKHost;
   signalKPort = environment.signalKPort;
+  isFixedConfiguration = environment.fixValues;
 
   get Resource() {
     return ResourceHelper.DefaultResource;
